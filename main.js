@@ -13,26 +13,26 @@ function createWindow() {
       slashes: true 
    }));
 
-   const db = await MongoClient.connect(MongoDbUrl)
-   try {
-         var collection = await db.collection('monsters');
-         var oneMonster = collection.findOne({"name" : "Aboleth"}, function(err, result){
-         console.log(result);
-         });
-   } catch (error) {
+   // const db = await MongoClient.connect(MongoDbUrl)
+   // try {
+   //       var collection = await db.collection('monsters');
+   //       var oneMonster = collection.findOne({"name" : "Aboleth"}, function(err, result){
+   //       console.log(result);
+   //       });
+   // } catch (error) {
       
-   }
-   // MongoClient.connect(MongoDbUrl, function(err, client) {
-   //    if(!err) {
-   //        var db = client.db("testdb")  
-   //        console.log("We are connected");
-   //        var collection = db.collection('monsters');
-   //        var oneMonster = collection.findOne({"name" : "Aboleth"}, function(err, result){
-   //            console.log(result);
-   //        });
+   // }
+   MongoClient.connect(MongoDbUrl, function(err, client) {
+      if(!err) {
+          var db = client.db("testdb")  
+          console.log("We are connected");
+          var collection = db.collection('monsters');
+          var oneMonster = collection.findOne({"name" : "Aboleth"}, function(err, result){
+              console.log(result);
+          });
           
-   //    }
-   //    });
+      }
+      });
 
    
 }  
