@@ -15,8 +15,8 @@
     <p class="control">
       <span class="select">
         <select>
-          <option>szint</option>
-          <option>kih. érték</option>
+          <option>szintje</option>
+          <option>kih. értéke</option>
         </select>
       </span>
     </p>
@@ -24,19 +24,72 @@
       <input class="input" type="text" placeholder="keresési érték">
     </p>
     <p class="control">
-      <a class="button is-primary">
+      <a class="button is-dark">
         Keress!
       </a>
     </p>
   </div>
   <div class="columns">
-    <div class="column is-half">
+    <div class="column is-fourth">
       <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Tulajdonságok
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="field is-grouped">
+            <div class="field is-grouped">
+              <label>Erő</label>
+              <div class="control">
+                <input type=”text” class="input is-small is-primary" name=”meret”>
+              </div>
+              <span class="tag is-dark">+1</span>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="field">
+              <label>Ügy.</label>
+              <div class="control">
+                <input type=”text” class="input is-small is-primary" name=”oldal_eleres”>
+              </div>
+            </div>
+          </div>
+          <div class="field has-addons">
+            <label>Áll.</label>
+            <div class="control">
+              <input type=”text” class="input is-small is-primary" name=”jellem”>
+            </div>
+            <div class="control">
+              <a class="button is-static is-small ">
+                +4
+              </a>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <label>Int.</label>
+            <div class="control">
+              <input type=”text” class="input is-small is-primary" name=”Sebesseg_gyalog”>
+            </div>
+            <span class="tag is-dark">+3</span>
+          </div>
+          <div class="field">
+            <label>Böl.</label>
+            <div class="control">
 
+              <input type=”text” class="input is-small is-primary" name=”Sebesseg_uszva”>
+            </div>
+          </div>
+          <div class="field">
+            <label>Kar.</label>
+            <div class="control">
+              <input type=”text” class="input is-small is-primary" name=”Sebesseg_furva”>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
-    <div class="column is-half">
+    <div class="column is-fourth">
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">
@@ -60,19 +113,15 @@
           <div class="field">
             <label>Jellem:</label>
             <div class="control">
-
               <input type=”text” class="input is-small is-primary" name=”jellem”>
             </div>
           </div>
-
           <div class="field">
             <label>Sebesség (gyalog):</label>
             <div class="control">
-
               <input type=”text” class="input is-small is-primary" name=”Sebesseg_gyalog”>
             </div>
           </div>
-
           <div class="field">
             <label>Sebesség (úszva):</label>
             <div class="control">
@@ -98,6 +147,16 @@
         </div>
       </div>
 
+    </div>
+    <div class="column is-fourth">
+
+    </div>
+    <div class="column is-fourth">
+        <div class="tags">
+            <span class="tag">Képesség1</span>
+            <span class="tag">Képesség2</span>
+            <span class="tag">Képesség3</span>
+          </div>
     </div>
   </div>
   <h1 class="subtitle is-h3">Hello there!</h1>
