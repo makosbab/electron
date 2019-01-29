@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang=”hu”>
+<head>
+<meta charset="UTF-8"> 
+<title>D&D karakterlap generátor</title>
+<!-- <link rel=”stylesheet” href=”… .css”>-->
+<style></style>
+</head>
+<body>
+
+<div id="header">
+<!--  -->
+<img src="dunegonsanddragons.jpg" width="20%" height="20%" align="center">
+<h1>Karakterlap generátor</h1>
+</div>
+
+<nav>
+	<ul>
+		<li><a href="index.html">Főoldal</a></li>
+		<li>Karakter generátor</li>
+	</ul>
+</nav>
+
+<form>
+<h2>Karakter adatai</h2>
+<div id="Karakter_adatai">
+
+<div id="generalo_adatok">
+Az ellenfél generálásához add meg az adatokat: a szintet vagy a kihívási értéket. Ezt követően választhatsz a megadott szintű vagy kihívási értékű fajok közül.
+
+<p>
+
+
+<p>
+<label>Szint:
+<input type=”number” name=”szint” size="3" min="1" max="100" step="1" value="1">
+</label>
+
+
+<label>Kihívási érték:
+<input type=”number” name=”kihivas” size="3" min="0" max="100" value="0">
+</label>
+</p>
+
+<p>
+<label>Faj:
+<select name="fajvalasztas" size="20" >
+<option value="default" selected>-- Válassz egy fajt! --</option>
+</select>
+</label>
+</p>
+
+<button type=”submit” name=”General” value=”…”>Ellenfél létrehozása</button>
+
+</br>
+</br>
+</div>
+<!--
+<p>
+<label>Név:
+<input type=”text” name=”karakter_neve” size="50">
+</label>
+</p>
+
+<p>
+<label>Jellemvonások:
+<input type=”text” name=”karakter_jellemvonasok” size="100">
+</label>
+</p>
+
+<p>
+<label>Kinézet:
+<input type=”text” name=”karakter_kinezet” size="100">
+</label>
+</p>
+
+<p>
+<label>Életkor:
+<input type=”text” name=”karakter_eletkor” size="3">
+</label>
+</p>
+
+<p>
+<label>Nem:
+<input type=”text” name=”karakter_nem” size="3">
+</label>
+</p>
+
+<p>
+<label>Magasság:
+<input type=”range” name=”karakter_magassag” size="10"> láb
+</label>
+</p>
+
+<p>
+<label>Testsúly:
+<input type=”text” name=”karakter_testsuly” size="100"> font
+</label>
+</p>
+
+<p>
+<label>Kaszt:
+<input type=”text” name=”kaszt” size="20">
+</label>
+</p>
+
+<p>
+<label>Isten:
+<input type=”text” name=”isten” size="20">
+</label>
+</p>
+
+
+</div> 
+-->
+
+
+<div id="Karakter_tulajdonsagai">
+
+<fieldset>
+<legend>Karakter adottságai</legend>
+
+<p>
+<label>Méret:
+<input type=”text” name=”meret” size="10">
+</label>
+<label>Oldal elérés:
+<input type=”text” name=”oldal_eleres” size="25"> láb
+</label>
+</p>
+<p>
+<label>Jellem:
+<input type=”text” name=”jellem” size="10">
+</label>
+</p>
+<p>
+<label>Sebesség (gyalog):
+<input type=”text” name=”Sebesseg_gyalog” size="10">
+</label>
+<label>Sebesség (úszva):
+<input type=”text” name=”Sebesseg_uszva” size="10">
+</label>
+<label>Sebesség (fúrva):
+<input type=”text” name=”Sebesseg_furva” size="10">
+</label>
+<label>Sebesség (repülve):
+<input type=”text” name=”Sebesseg_rep” size="10">
+</label>
+
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Tulajdonságok</legend>
+<div id="Karakter_tulajdonsag_pontok">
+<p>
+<label>Erő:
+<input type=”number” name=”Ero” min="0" max="50" size="3">
+</label>
+<label>Erő módosító:
+<input type=”number” name=”Ero_mod” min="0" max="50" size="3">
+</label>
+</p>
+
+<p>
+<label>Ügyesség:
+<input type=”number” name=”Ugy” min="0" max="50" size="3">
+</label>
+<label>Ügyesség módosító:
+<input type=”number” name=”Ugy_mod” min="0" max="50" size="3">
+</label>
+</p>
+
+<p>
+<label>Állóképesség:
+<input type=”number” name=”All” min="0" max="50" size="3">
+</label>
+<label>Állóképesség módosító:
+<input type=”number” name=”All_mod” min="0" max="50" size="3">
+</label>
+</p>
+
+<p>
+<label>Intelligencia:
+<input type=”number” name=”Int” min="0" max="50" size="3">
+</label>
+<label>Intelligencia módosító:
+<input type=”number” name=”Int_mod” min="0" max="50" size="3">
+</label>
+</p>
+
+<p>
+<label>Bölcsesség:
+<input type=”number” name=”Bol” min="0" max="50" size="3">
+</label>
+<label>Bölcsesség módosító:
+<input type=”number” name=”Bol_mod” min="0" max="50" size="3">
+</label>
+</p>
+
+<p>
+<label>Karizma:
+<input type=”number” name=”Kar” min="0" max="50" size="3">
+</label>
+<label>Karizma módosító:
+<input type=”number” name=”Kar_mod” min="0" max="50" size="3">
+</label>
+</p>
+</fieldset>
+</div>
+
+
+<div id="elet_vedelem">
+<fieldset>
+<legend>Életerő és védelem</legend>
+<p>
+<label>Élet: 
+<input type=”number” name=”Elet” step="1" size="3">
+</label>
+
+<label>Regeneráció: 
+<input type=”number” name=”Regeneracio” step="1" size="3">
+</label>
+
+<label>Sebzés csökkentés: 
+<input type=”number” name=”Seb_csokkentes” step="1" size="3">
+</label>
+
+<label>Mágia ellenállás: 
+<input type=”number” name=”ME” step="1" size="3">
+</label>
+</p>
+
+<p>
+<label>VF: 
+<input type=”number” name=”Vf” step="1" size="3"> + Kitérés (ha van) 
+</label>
+</p>
+
+</fieldset>
+</div>
+
+<div id="Mentok">
+<fieldset>
+<legend>Mentő dobások</legend>
+<p>
+<label>Szívósság: 
+<input type=”number” name=”Sziv” step="1" size="3">
+</label>
+
+<label>Gyorsaság: 
+<input type=”number” name=”Gyors” step="1" size="3">
+</label>
+
+<label>Akaraterő: 
+<input type=”number” name=”Akarat” step="1" size="3">
+</label>
+</p>
+
+
+</fieldset>
+</div>
+
+
+<div id="Tamadas">
+<fieldset>
+<legend>Támadás</legend>
+<p>
+<label>Kezdeményezés:
+<input type=”number” name=”Kezdemenyezes” step="1" size="3">
+</label>
+</p>
+
+<!--
+
+
+Alaptámadás bónusz
+
+Közeli támadás bónusz
+
+Távoli támadás bónusz
+-->
+
+<p>
+<label>1. fegyver neve:
+<input type=”text” name=”fegyver” size="25">
+</label>
+<label>Teljes támadás bónusz:
+<input type=”text” name=”1_tamadas_bon” size="12">
+</label>
+<label>Sebzés:
+<input type=”text” name=”1_sebzes” size="10">
+</label>
+<label>Kritikál:
+<input type=”text” name=”1_kritikal” size="10">
+</label>
+<label>Távolság:
+<input type=”text” name=”1_tav” size="3"> láb
+</label>
+<label>Típus:
+<input type=”text” name=”1_tipus” size="10">
+</label>
+<label>Különleges képesség:
+<input type=”text” name=”1_kul_kepesseg” size="25">
+</label>
+</p>
+</fieldset>
+</div>
+
+<div id="Lovedekek">
+<fieldset>
+<legend>Lövedékek</legend>
+<p>
+<p>
+<label>1. lövedék neve:
+<input type=”text” name=”1_lovedek” size="25">
+</label>
+<label>darabszáma:
+<input type=”number” name=”1_db” size="3">
+</label>
+
+</p>
+</fieldset>
+</div>
+
+
+<div id="Vedelem">
+<fieldset>
+<legend>Védelem</legend>
+<p>
+<label>Vért neve:
+<input type=”text” name=”Vert” size="25">
+</label>
+<label>Típus:
+<input type=”text” name=”Vert_tipusa” size="10">
+</label>
+<label>Bónusz:
+<input type=”number” name=”Vert_bonusz” size="3">
+</label>
+<label>Varázslat rontás:
+<input type=”number” name=”Vert_var_rontas” step="1" size="3"> %
+</label>
+<label>Különleges képesség:
+<input type=”text” name=”Vert_kul_kepesseg” size="25">
+</label>
+
+<!--
+<label>Maximális ügyesség vértben:
+<input type=”number” name=”Max_ugy_vertben” size="3">
+</label>
+<label>Ügyesség mód. vértben:
+<input type=”number” name=”Ugy_mod_vert” size="3">
+</label>
+<label>Sebesség vértben:
+<input type=”number” name=”Sebesseg_vertben” size="3"> láb
+</label>
+<label>Súly:
+<input type=”number” name=”Vert_sulya” size="3"> font
+</label>
+-->
+</p>
+
+<p>
+<label>Pajzs neve:
+<input type=”text” name=”Pajzs” size="25">
+</label>
+<label>Típus:
+<input type=”text” name=”Pajzs_tipusa” size="10">
+</label>
+<label>Bónusz:
+<input type=”number” name=”Pajzs_bonusz” size="3">
+</label>
+<label>Varázslat rontás:
+<input type=”number” name=”Pajzs_var_rontas” step="1" size="3"> %
+</label>
+<label>Különleges képesség:
+<input type=”text” name=”Pajzs_kul_kepesseg” size="25">
+</label>
+
+<!--
+<label>Ügyesség mód. vértben:
+<input type=”number” name=”Ugy_mod_pajzs” size="3">
+</label>
+<label>Súly:
+<input type=”number” name=”Pajzs_sulya” size="3"> font
+</label>
+-->
+</p>
+
+</fieldset>
+</div>
+
+<div id="Szakertelmek">
+<fieldset>
+<legend>Szakértelmek</legend>
+<p>
+<label>Akrobatika (Ügy):
+<input type=”number” name=”Szake_akrobatika” size="3">
+</label>
+</p>
+<p>
+<label>Álcázás (Kar):
+<input type=”number” name=”Szake_alcazas” size="3">
+</label>
+</p>
+<p>
+<label>Alkímia (Int):
+<input type=”number” name=”Szake_alkimia” size="3">
+</label>
+</p>
+<p>
+<label>Állati érzék (Kar):
+<input type=”number” name=”Szake_allati_erzek” size="3">
+</label>
+</p>
+<p>
+<label>Allatidomitas (Kar):
+<input type=”number” name=”Szake_akrobatika” size="3">
+</label>
+</p>
+<p>
+<label>Átverés (Kar):
+<input type=”number” name=”Szake_atveres” size="3">
+</label>
+</p>
+<p>
+<label>Csendes mozgás (Ügy):
+<input type=”number” name=”Szake_csendes_mozg” size="3">
+</label>
+</p>
+<p>
+<label>Diplomácia (Kar):
+<input type=”number” name=”Szake_diplomacia” size="3">
+</label>
+</p>
+<p>
+<label>Egyensúly (Ügy):
+<input type=”number” name=”Szake_egyensuly” size="3">
+</label>
+</p>
+<p>
+<label>Előadás (Kar):
+<input type=”number” name=”Szake_eloadas” size="3">
+</label>
+</p>
+<p>
+<label>Értékbecslés (Int):
+<input type=”number” name=”Szake_ertekbecsles” size="3">
+</label>
+</p>
+<p>
+<label>Eszköz hatástalanítása (Int):
+<input type=”number” name=”Szake_eszkoz_hatastalanitas” size="3">
+</label>
+</p>
+<p>
+<label>Észlelés (Böl):
+<input type=”number” name=”Szake_eszleles” size="3">
+</label>
+</p>
+<p>
+<label>Fürkészés (Int):
+<input type=”number” name=”Szake_furkeszes” size="3">
+</label>
+</p>
+<p>
+<label>Gyogyitas (Böl):
+<input type=”number” name=”Szake_gyogyitas” size="3">
+</label>
+</p>
+<p>
+<label>Hallgatózás (Böl):
+<input type=”number” name=”Szake_hallgatozas” size="3">
+</label>
+</p>
+<p>
+<label>Hamisitas (Int):
+<input type=”number” name=”Szake_hamisitas” size="3">
+</label>
+</p>
+<p>
+<label>Indíték megérzés (Böl):
+<input type=”number” name=”Szake_inditek_mege” size="3">
+</label>
+</p>
+<p>
+<label>Információgyűjtés (Kar):
+<input type=”number” name=”Szake_infogyujtes” size="3">
+</label>
+</p>
+<p>
+<label>Irányérzék (Böl):
+<input type=”number” name=”Szake_iranyerzek” size="3">
+</label>
+</p>
+<p>
+<label>Írás megfejtése (Int):
+<input type=”number” name=”Szake_irasfejtes” size="3">
+</label>
+</p>
+<p>
+<p>
+<label>Ismeretek-egyéb (Int):
+<input type=”number” name=”Szake_ism_egyeb” size="3">
+</label>
+</p>
+<p>
+<label>Ismeretek-misztikus (Int):
+<input type=”number” name=”Szake_ism_miszt” size="3">
+</label>
+</p>
+<p>
+<label>Ismeretek-természet (Int):
+<input type=”number” name=”Szake_ism_egyeb” size="3">
+</label>
+</p>
+<p>
+<label>Ismeretek-vallás (Int):
+<input type=”number” name=”Szake_ism_egyeb” size="3">
+</label>
+</p>
+<p>
+<label>Keresés (Int):
+<input type=”number” name=”Szake_kereses” size="3">
+</label>
+</p>
+<p>
+<label>Kötélhasználat (Ügy):
+<input type=”number” name=”Szake_kotelhaszn” size="3">
+</label>
+</p>
+<p>
+<label>Lovaglás (Ügy):
+<input type=”number” name=”Szake_lovaglas” size="3">
+</label>
+</p>
+<p>
+<label>Mágiaismeret (Int):
+<input type=”number” name=”Szake_magiaism” size="3">
+</label>
+</p>
+<p>
+<label>Mászás (Erő):
+<input type=”number” name=”Szake_maszas” size="3">
+</label>
+</p>
+<p>
+<label>Megfélemlítés (Kar):
+<input type=”number” name=”Szake_megfelemlites” size="3">
+</label>
+</p>
+<p>
+<label>Mesterség (Int):
+<input type=”number” name=”Szake_mesterseg” size="3">
+</label>
+</p>
+<p>
+<label>Nyelv beszélése:
+<input type=”number” name=”Szake_nyelv” size="3">
+</label>
+</p>
+<p>
+<label>Összpontosítás (Áll):
+<input type=”number” name=”Szake_osszpontositas” size="3">
+</label>
+</p>
+<p>
+<label>Rejtőzködés (Ügy):
+<input type=”number” name=”Szake_rejtozkodes” size="3">
+</label>
+</p>
+<p>
+<label>Szabadulóművész (Ügy):
+<input type=”number” name=”Szake_szabadulomuvesz” size="3">
+</label>
+</p>
+<p>
+<label>Szájról olvasás (Int):
+<input type=”number” name=”Szake_szajrol_olv” size="3">
+</label>
+</p>
+<p>
+<label>Szakma (Böl):
+<input type=”number” name=”Szake_szakma” size="3">
+</label>
+</p>
+<p>
+<label>Tolvajnyelv (Böl):
+<input type=”number” name=”Szake_tolvajnyelv” size="3">
+</label>
+</p>
+<p>
+<label>Ugrás (Erő):
+<input type=”number” name=”Szake_ugras” size="3">
+</label>
+</p>
+<p>
+<label>Úszás (Erő):
+<input type=”number” name=”Szake_uszas” size="3">
+</label>
+</p>
+<p>
+<label>Vadonismeret (Böl):
+<input type=”number” name=”Szake_vadonism” size="3">
+</label>
+</p>
+<p>
+<label>Varázstárgy használat (Kar):
+<input type=”number” name=”Szake_varazstargy” size="3">
+</label>
+</p>
+<p>
+<label>Zárnyitás (Ügy):
+<input type=”number” name=”Szake_zarnyitas” size="3">
+</label>
+</p>
+<p>
+<label>Zsebmetszés (Ügy):
+<input type=”number” name=”Szake_zsebmetszes” size="3">
+</label>
+</p>
+<p>
+<label>Egyéb szakértelem bónuszok:
+<input type=”text” name=”Szake_egyeb_bon” size="25">
+</label>
+</p>
+</fieldset>
+</div>
+
+<div id="Targyak">
+<fieldset>
+<legend>Felszerelés</legend>
+<p>
+<label>Felszerelés lista:
+<textarea name=”Felszereles_lista” size="50"></textarea>
+</label>
+</p>
+<p>
+<label>Bájitalok listája:
+<textarea name=”Bajitalok” size="50"></textarea>
+</label>
+</p>
+<p>
+<label>Varázstárgyak listája:
+<textarea name=”Var_targyak_listaja” size="50"></textarea>
+</label>
+</p>
+<p>
+<label>Drágakövek, egyéb kincsek listája:
+<textarea name=”Dragakovek_listaja” size="50"></textarea>
+</label>
+</p>
+<p>
+<label>Platina:
+<input type=”number” name=”penz_platina” size="10">
+</label>
+
+<label>Arany:
+<input type=”number” name=”penz_arany” size="10">
+</label>
+
+<label>Ezüst:
+<input type=”number” name=”penz_ezust” size="10">
+</label>
+
+<label>Réz:
+<input type=”number” name=”penz_rez” size="10">
+</label>
+</p>
+</fieldset>
+</div>
+
+<div id="Nyelvek">
+<fieldset>
+<legend>Nyelvek</legend>
+<p>
+<label>Beszélt nyelvek és a nyelv ABC-je:
+<textarea name=”Nyelvek” size="50"></textarea>
+</label>
+</p>
+
+</fieldset>
+</div>
+
+
+<div id="Kepessegek">
+<fieldset>
+<legend>Képességek és különleges tulajdonságok</legend>
+<p>
+<label>Képességek és különleges tulajdonságok listája:
+<textarea name=”Kepessekeg” size="50"></textarea>
+</label>
+</p>
+
+</fieldset>
+</div>
+
+
+<div id="Varazslatok">
+<fieldset>
+<legend>Varázslatok</legend>
+
+<p>
+<label>Varázslatszerű képességek: 
+<textarea name=”Varszeru_kepessegek” size="50"></textarea>
+</label>
+
+</p>
+
+<p>
+0. szintű varázslat,  
+<label>mentő: 
+<input type=”number” name=”Var_0_mento” size="3">
+</label>
+<textarea name=”Var_0_lista” size="50"></textarea>
+
+</p>
+<p>
+1. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_1_mento” size="3">
+</label>
+<textarea name=”Var_1_lista” size="50"></textarea>
+</p>
+<p>
+2. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_2_mento” size="3">
+</label>
+<textarea name=”Var_2_lista” size="50"></textarea>
+</p>
+<p>
+3. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_3_mento” size="3">
+</label>
+<textarea name=”Var_3_lista” size="50"></textarea>
+</p>
+<p>
+4. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_4_mento” size="3">
+</label>
+<textarea name=”Var_4_lista” size="50"></textarea>
+</p>
+<p>
+5. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_5_mento” size="3">
+</label>
+<textarea name=”Var_5_lista” size="50"></textarea>
+</p>
+<p>
+6. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_6_mento” size="3">
+</label>
+<textarea name=”Var_6_lista” size="50"></textarea>
+</p>
+<p>
+7. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_7_mento” size="3">
+</label>
+<textarea name=”Var_7_lista” size="50"></textarea>
+</p>
+<p>
+8. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_8_mento” size="3">
+</label>
+<textarea name=”Var_8_lista” size="50"></textarea>
+</p>
+<p>
+9. szintű varázslat, 
+<label>mentő: 
+<input type=”number” name=”Var_9_mento” size="3">
+</label>
+<textarea name=”Var_9_lista” size="50"></textarea>
+</p>
+</fieldset>
+</div>
+<!--
+<div id="">
+<fieldset>
+<legend></legend>
+
+
+
+</fieldset>
+</div>
+
+
+
+-->
+</form>
+
+</body>
+</html>
